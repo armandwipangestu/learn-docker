@@ -63,10 +63,8 @@ cd learn-docker
 > **Note**:
 >
 > - `-t` This is option/flag for tag, if empty it will be used `latest` for default
->
-> - `hello-docker`: this is for the image name
->
-> - `.`: this mean use the current `Dockerfile` configuration
+> - `hello-docker` this is for the image name
+> - `.` this mean use the current `Dockerfile` configuration
 
 ```bash
 cd hello-docker
