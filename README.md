@@ -8,6 +8,7 @@
 
 # Table of Contents
 
+- [Introduction](#introduction)
 - [Quick Start](#quick-start)
   - [Pre-requisites](#pre-requisites)
   - [Cloning the Repository](#cloning-the-repository)
@@ -15,16 +16,36 @@
   - [Running `react-docker`](#running-react-docker)
   - [Publish images to the Docker Hub](#publish-images-to-the-docker-hub)
 
+# Introduction
+
+Learn the process of containerizing frontend, backend, and database applications built with diverse tech stacks like React, Vue, Svelte, or any Vite projects. Additionally, it covers examples of the containerization of complete full-stack applications, including MERN setups or the popular Monorepo full-stack applications using Next.js 14+.
+
+This repository contains the corresponding code for all these dockerized applications using the latest Docker features, including docker-compose watch and init.
+
+# Tech Stack
+
+- Docker
+- Node.js
+- React.js
+- Vite
+- MongoDB
+- Express.js
+- Next.js
+- Tailwind CSS
+
 # Quick Start
+
+Follow these steps to set up the project locally on your machine.
 
 ## Pre-requisites
 
 Make sure you have the following installed on your machine:
 
-- Git
-- Node.js
-- npm (Node Package Manager)
-- Docker
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
 
 ## Cloning the Repository
 
@@ -36,7 +57,7 @@ cd learn-docker
 ## Running `hello-docker`
 
 <details>
-<summary><code>Build image<code></summary>
+<summary><code>Build image</code></summary>
 
 > **Note**:
 >
@@ -54,7 +75,7 @@ docker build -t hello-docker .
 </details>
 
 <details>
-<summary><code>List docker images<code></summary>
+<summary><code>List docker images</code></summary>
 
 ```bash
 docker images
@@ -63,7 +84,7 @@ docker images
 </details>
 
 <details>
-<summary><code>Running the image<code></summary>
+<summary><code>Running the image</code></summary>
 
 > **Note**:
 >
@@ -84,7 +105,7 @@ docker run hello-docker
 ## Running `react-docker`
 
 <details>
-<summary><code>Build image<code></summary>
+<summary><code>Build image</code></summary>
 
 ```bash
 cd react-docker
@@ -94,7 +115,7 @@ docker build -t react-docker .
 </details>
 
 <details>
-<summary><code>Running the image<code></summary>
+<summary><code>Running the image</code></summary>
 
 ```bash
 docker run react-docker
@@ -103,7 +124,7 @@ docker run react-docker
 </details>
 
 <details>
-<summary><code>Running the image with expose port<code></summary>
+<summary><code>Running the image with expose port</code></summary>
 
 > **Note**:
 >
@@ -137,7 +158,7 @@ docker run -p 5173:5173 react-docker
 </details>
 
 <details>
-<summary><code>Running the image with code change detected<code></summary>
+<summary><code>Running the image with code change detected</code></summary>
 
 > **Note**:
 >
@@ -172,7 +193,7 @@ docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker
 ## Publish images to the Docker Hub
 
 <details>
-<summary><code>Login to the user<code></summary>
+<summary><code>Login to the user</code></summary>
 
 ```bash
 cd react-docker
@@ -182,7 +203,7 @@ docker login
 </details>
 
 <details>
-<summary><code>Create new image with existing image<code></summary>
+<summary><code>Create new image with existing image</code></summary>
 
 > **Note**:
 >
@@ -195,7 +216,7 @@ docker tag react-docker <username>/react-docker
 ```
 
 <details>
-<summary><code>Publish the image<code></summary>
+<summary><code>Publish the image</code></summary>
 
 > **Note**:
 >
