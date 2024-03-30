@@ -1,3 +1,20 @@
+<div align="center">
+  <h3 align="center">Learn Docker</h3>
+
+   <div align="center">
+     Learn how to Dockerize various applications step by step with detailed.
+    </div>
+</div>
+
+# Table of Contents
+
+- [Quick Start](#quick-start)
+  - [Pre-requisites](#pre-requisites)
+  - [Cloning the Repository](#cloning-the-repository)
+  - [Running `hello-docker`](#running-hello-docker)
+  - [Running `react-docker`](#running-react-docker)
+  - [Publish images to the Docker Hub](#publish-images-to-the-docker-hub)
+
 # Quick Start
 
 ## Pre-requisites
@@ -18,32 +35,41 @@ cd learn-docker
 
 ## Running `hello-docker`
 
-- Build image
+<details>
+<summary><code>Build image<code></summary>
 
 > **Note**:
 >
-> `-t`: this is option for tag, if empty it will be used `latest` for default
-> `hello-docker`: this is for the image name
-> `.`: this mean use the current `Dockerfile` configuration
+> - `-t` This is option/flag for tag, if empty it will be used `latest` for default
+>
+> - `hello-docker`: this is for the image name
+>
+> - `.`: this mean use the current `Dockerfile` configuration
 
 ```bash
 cd hello-docker
 docker build -t hello-docker .
 ```
 
-- List docker images
+</details>
+
+<details>
+<summary><code>List docker images<code></summary>
 
 ```bash
 docker images
 ```
 
-- Running the image
+</details>
+
+<details>
+<summary><code>Running the image<code></summary>
 
 > **Note**:
 >
 > This will make container to running from the image.
 >
-> You can add some option/flag to make interactive the running container. e.g.,
+> You can add some option/flag to make interactive shell the running container. e.g.,
 >
 > ```bash
 > docker run -it hello-docker sh
@@ -53,22 +79,31 @@ docker images
 docker run hello-docker
 ```
 
+</details>
+
 ## Running `react-docker`
 
-- Build image
+<details>
+<summary><code>Build image<code></summary>
 
 ```bash
 cd react-docker
 docker build -t react-docker .
 ```
 
-- Running the image
+</details>
+
+<details>
+<summary><code>Running the image<code></summary>
 
 ```bash
 docker run react-docker
 ```
 
-- Running the image with expose port
+</details>
+
+<details>
+<summary><code>Running the image with expose port<code></summary>
 
 > **Note**:
 >
@@ -80,7 +115,7 @@ docker run react-docker
 >
 > This app will run but not be expose to the machine host, so you can't access the app directly from your browser machine host. To handle this you must add specific option/flag to expose the port. You can use `port mapping` like this
 >
-> `5173:5173`: The first port this mean is the machine host port, and the second port is the port inside container. If you familiar with networking, this is like port forwarding. You can imagine, when you access the `localhost:5173` from the browser machine host, under the hood it will be forward to the `5173` port on the container app
+> `5173:5173` The first port this mean is the machine host port, and the second port is the port inside container. If you familiar with networking, this is like port forwarding. You can imagine, when you access the `localhost:5173` from the browser machine host, under the hood it will be forward to the `5173` port on the container app
 >
 > If you already `port mapping` the docker run but still can't access from the browser machine host. The problem can be from the `vite`, because the default vite will not be bind to the another network (the default just bind to `localhost`). So you can change the configuration vite on `package.json` with the option/flag `--host` like this
 >
@@ -99,7 +134,10 @@ docker run react-docker
 docker run -p 5173:5173 react-docker
 ```
 
-- Running the image with code change detected
+</details>
+
+<details>
+<summary><code>Running the image with code change detected<code></summary>
 
 > **Note**:
 >
@@ -129,16 +167,22 @@ docker run -p 5173:5173 react-docker
 docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker
 ```
 
+</details>
+
 ## Publish images to the Docker Hub
 
-- Login to the user
+<details>
+<summary><code>Login to the user<code></summary>
 
 ```bash
 cd react-docker
 docker login
 ```
 
-- Create new image with existing image
+</details>
+
+<details>
+<summary><code>Create new image with existing image<code></summary>
 
 > **Note**:
 >
@@ -150,7 +194,8 @@ docker login
 docker tag react-docker <username>/react-docker
 ```
 
-- Publish the image
+<details>
+<summary><code>Publish the image<code></summary>
 
 > **Note**:
 >
@@ -161,3 +206,5 @@ docker push <username>/react-docker
 ```
 
 ![Docker Hub](assets/docker-hub.png)
+
+</details>
