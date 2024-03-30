@@ -9,6 +9,7 @@
 # Table of Contents
 
 - [Introduction](#introduction)
+- [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
   - [Pre-requisites](#pre-requisites)
   - [Cloning the Repository](#cloning-the-repository)
